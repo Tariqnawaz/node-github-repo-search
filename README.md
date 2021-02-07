@@ -1,5 +1,5 @@
 ## Frontend project
-For server side code visit to [https://github.com/Tariqnawaz/react-github-repo-search.git](https://github.com/Tariqnawaz/react-github-repo-search.git)
+For frontend side code visit to [https://github.com/Tariqnawaz/react-github-repo-search.git](https://github.com/Tariqnawaz/react-github-repo-search.git)
 
 # About The Project
 ![search](https://user-images.githubusercontent.com/31206475/107151133-6ff22980-697a-11eb-9821-03132d7316cf.png)
