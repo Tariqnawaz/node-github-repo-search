@@ -6,6 +6,7 @@
 3. ExpressJs
 4. REDIS
 
+**Summary**
 * Get github repository by users or repositories.
 * ExpressJS handles incomming request and makes a github api call.
 * Using github `https://api.github.com/search/` api for searching `Users & Repositories`
@@ -14,6 +15,12 @@
 
 
 # Getting Started
-1. Prerequisites  
+
+1. Prerequisites (local machine)  
+* install `Node.js`
+* install `Redis`
+
 2. Installation
+* git clone `https://github.com/Tariqnawaz/node-github-repo-search.git`
+* inside root folder `npm install`
 
