@@ -9,11 +9,11 @@ router.use(express.urlencoded({extended:true}))
 router.use(express.json());
 const users:String='users';
 const repo:String='repositories';
-
+const gitToken: String = '57990afbb395713ae8269c048da26b0e13cbb313';
 const headers = {
     'Content-Type': 'application/json',
     'Accept': 'application/vnd.github.v3.raw',
-    'Authorization': 'token 8b83507fd980f4086e2e0357b6c4473ed920a2f2'
+    'Authorization': `token ${gitToken}`
 }
 
 /**
@@ -99,17 +99,21 @@ const clientResponseMsg = (code: Number) =>{
 
 const search = async (searchBy: string, query: string) =>{
     let list: string[] = [];
-    const response = await axios.get(`https://api.github.com/search/${searchBy}?q=${encodeURIComponent(`${query}`)}`,{headers});
-    const data = await response.data;
-    if(data.total_count===0) return [];
-    for(let i=0; i<data.items.length;i++){
-        const obj = data.items[i];
-        list.push(i+'');
-        if(searchBy===repo){
-            list.push(JSON.stringify(getRepo(obj)));
-        }else{
-            list.push(JSON.stringify(await getUser(obj)));
+    try {
+        const response = await axios.get(`https://api.github.com/search/${searchBy}?q=${encodeURIComponent(`${query}`)}`,{headers});
+        const data = await response.data;
+        if(data.total_count===0) return [];
+        for(let i=0; i<data.items.length;i++){
+            const obj = data.items[i];
+            list.push(i+'');
+            if(searchBy===repo){
+                list.push(JSON.stringify(getRepo(obj)));
+            }else{
+                list.push(JSON.stringify(await getUser(obj)));
+            }
         }
+    } catch (err) {
+        console.error('Failed to get data search() :: ',err);
     }
     return list;
 }
@@ -119,19 +123,23 @@ const search = async (searchBy: string, query: string) =>{
  * seperate api call for each user & takes the required field for UI
  */
 const getUser = async (element: any) => {
-    const usrObj = await axios.get(`https://api.github.com/users/${element.login}`,{headers});
-    const username = usrObj.data.name === null ? usrObj.data.login : usrObj.data.name;
-    const user:User = {
-        'id': usrObj.data.id,
-        'name': username,
-        'profile_link': usrObj.data.html_url,
-        'profile_pic': usrObj.data.avatar_url,
-        'location': usrObj.data.location,
-        'public_repos': usrObj.data.public_repos,
-        'followers': usrObj.data.followers,
-        'following': usrObj.data.following
+    try {
+        const usrObj = await axios.get(`https://api.github.com/users/${element.login}`,{headers});
+        const username = usrObj.data.name === null ? usrObj.data.login : usrObj.data.name;
+        const user: User = {
+            'id': usrObj.data.id,
+            'name': username,
+            'profile_link': usrObj.data.html_url,
+            'profile_pic': usrObj.data.avatar_url,
+            'location': usrObj.data.location,
+            'public_repos': usrObj.data.public_repos,
+            'followers': usrObj.data.followers,
+            'following': usrObj.data.following
+        }
+        return user;
+    } catch (error) {
+        console.log('failed to fectch user info:: getUser()');
     }
-    return user;
 }
 
 /**
