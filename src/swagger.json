@@ -1,0 +1,110 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Github search",
+        "version": "1.0.0",
+        "description": "Search github users or repositories"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "tags": [
+        {
+            "name": "Github",
+            "description": "API for searching users & repositories"
+        }
+    ],
+    "schemes": [
+        "http"
+    ],
+    "consumes":[
+        "application/json"
+    ],
+    "produces":[
+        "application/json"
+    ],
+    "paths": {
+        "/api/clear-cache": {
+            "get":{
+                "tags": [
+                    "Github"
+                ],
+                "summary": "clear redis cached data",
+                "responses": {
+                    "200":{
+                        "description": "Ok",
+                        "schema":{
+                            "$ref": "#/definition/msg"
+                        }
+                    },
+                    "500":{
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        },
+        "/api/search": {
+            "post":{
+                "tags": [
+                    "Github"
+                ],
+                "summary": "Search github users or repositories",
+                "parameters": [{
+                    "in": "body",
+                    "name": "body",
+                    "description": "Repo to search",
+                    "required": true,
+                    "schema": {
+                        "$ref": "#/definition/params"
+                    }
+                }],
+                "produces":[
+                    "application/json"
+                ],
+                "responses": {
+                    "200":{
+                        "description": "Ok",
+                        "schema": {
+                            "$ref": "#/definition/list"
+                        }
+                    },
+                    "400":{
+                        "description": "Bad request. Server could not understand the request due to invalid syntax"
+                    },
+                    "404":{
+                        "description": "No data found. Server can not find the requested resource data"
+                    },
+                    "500":{
+                        "description": "Internal Server Error"
+                    }
+                }
+            }
+        }
+    },
+    "definitions":{
+        "msg": {
+            "properties": {
+                "data":{
+                    "type": "string"
+                }
+            }
+        },
+        "list": {
+            "properties": {
+                "data":{
+                    "type": "array"
+                }
+            }
+        },
+        "params": {
+            "type": "object",
+            "properties": {
+                "searchInput": {
+                    "type": "string"
+                },
+                "searchBy": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
