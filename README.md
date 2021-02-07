@@ -1,3 +1,6 @@
+## Frontend project
+For server side code visit to [https://github.com/Tariqnawaz/react-github-repo-search.git](https://github.com/Tariqnawaz/react-github-repo-search.git)
+
 # About The Project
 ![search](https://user-images.githubusercontent.com/31206475/107151133-6ff22980-697a-11eb-9821-03132d7316cf.png)
 
@@ -7,7 +10,7 @@
 3. ExpressJs
 4. REDIS
 
-**Summary**
+**Description**
 * Get github repository by users or repositories.
 * ExpressJS handles incomming request and makes a github api call.
 * Using github `https://api.github.com/search/` api for searching `Users & Repositories`
