@@ -24,14 +24,16 @@
 2. Installation
 * `git clone https://github.com/Tariqnawaz/node-github-repo-search.git`
 * inside root folder `npm install`
-* Create `token` from github `Personal access tokens`[https://github.com/settings/tokens] 
+* Create `token` from github [Personal access tokens](https://github.com/settings/tokens) .
   and enter in search.ts i.e (gitToken = 'your token').
 * `npm run start:dev` runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000)
 
 # Usage
-<!-- 
-![search1](https://user-images.githubusercontent.com/31206475/107150551-bf832600-6977-11eb-979b-15c019c7c856.png)
-![search2](https://user-images.githubusercontent.com/31206475/107150554-c316ad00-6977-11eb-91f8-ce62d40c71dc.png) 
-  -->
+**Swagger**
+Swagger api: `http://localhost:3000/swagger/`
+![swagger](https://user-images.githubusercontent.com/31206475/107152000-0fb1b680-697f-11eb-89f7-07caaba4319b.png)
+![get-req](https://user-images.githubusercontent.com/31206475/107151999-0f192000-697f-11eb-8a42-d2b1a7e54034.png)
+![post-req](https://user-images.githubusercontent.com/31206475/107151996-0e808980-697f-11eb-877b-4a6b9561405e.png)
+
 
 
