@@ -21,7 +21,7 @@
 * install `Node.js`
 * install `Redis`
 
-2. Installation
+2. Installation*
 * `git clone https://github.com/Tariqnawaz/node-github-repo-search.git`
 * inside root folder `npm install`
 * Create `token` from github [Personal access tokens](https://github.com/settings/tokens) .
@@ -30,7 +30,9 @@
 
 # Usage
 **Swagger**
-Swagger api: `http://localhost:3000/swagger/`
+
+* open [http://localhost:3000/swagger/](http://localhost:3000/swagger/)
+
 ![swagger](https://user-images.githubusercontent.com/31206475/107152000-0fb1b680-697f-11eb-89f7-07caaba4319b.png)
 ![get-req](https://user-images.githubusercontent.com/31206475/107151999-0f192000-697f-11eb-8a42-d2b1a7e54034.png)
 ![post-req](https://user-images.githubusercontent.com/31206475/107151996-0e808980-697f-11eb-877b-4a6b9561405e.png)
