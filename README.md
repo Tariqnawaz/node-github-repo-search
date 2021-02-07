@@ -1,5 +1,5 @@
 # About The Project
-![search1](https://user-images.githubusercontent.com/31206475/107150551-bf832600-6977-11eb-979b-15c019c7c856.png) ![search2](https://user-images.githubusercontent.com/31206475/107150554-c316ad00-6977-11eb-91f8-ce62d40c71dc.png) 
+![search](https://user-images.githubusercontent.com/31206475/107151133-6ff22980-697a-11eb-9821-03132d7316cf.png)
 
 **Project Stack**
 1. Node js
@@ -29,9 +29,9 @@
 * `npm run start:dev` runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000)
 
 # Usage
-
+<!-- 
 ![search1](https://user-images.githubusercontent.com/31206475/107150551-bf832600-6977-11eb-979b-15c019c7c856.png)
 ![search2](https://user-images.githubusercontent.com/31206475/107150554-c316ad00-6977-11eb-91f8-ce62d40c71dc.png) 
- <!---->
+  -->
 
 
